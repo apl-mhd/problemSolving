@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sheikhaliazzam/Desktop/Algo/Graph/DFS/main.cpp
+iostream
+-
+cstdio
+-
+algorithm
+-
+vector
+-
+cstdio
+-
+queue
+-
+stack
+-
+

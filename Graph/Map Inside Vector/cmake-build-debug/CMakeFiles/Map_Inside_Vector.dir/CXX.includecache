@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sheikhaliazzam/Desktop/Algo/Graph/Map Inside Vector/main.cpp
+iostream
+-
+cstdio
+-
+vector
+-
+map
+-
+algorithm
+-
+climits
+-
+utility
+-
+queue
+-
+
