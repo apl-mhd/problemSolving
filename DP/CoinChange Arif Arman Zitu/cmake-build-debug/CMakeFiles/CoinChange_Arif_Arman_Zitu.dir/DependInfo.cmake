@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/sheikhaliazzam/Desktop/Algo/DP/CoinChange Arif Arman Zitu/main.cpp" "/Users/sheikhaliazzam/Desktop/Algo/DP/CoinChange Arif Arman Zitu/cmake-build-debug/CMakeFiles/CoinChange_Arif_Arman_Zitu.dir/main.cpp.o"
+  "/Users/sheikhaliazzam/Desktop/problem solving/DP/CoinChange Arif Arman Zitu/main.cpp" "/Users/sheikhaliazzam/Desktop/problem solving/DP/CoinChange Arif Arman Zitu/cmake-build-debug/CMakeFiles/CoinChange_Arif_Arman_Zitu.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
