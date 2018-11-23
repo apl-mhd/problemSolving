@@ -5,9 +5,6 @@
 using namespace std;
 int dp[100][100];
 
-
-
-
 int make(int coin[], int tk, int n){
 
 
@@ -39,14 +36,9 @@ int make(int coin[], int tk, int n){
 
 int main() {
 
-
-
     int coin[] = {1,2,3,5};
     int tk=5;
-
-
-
-
+    
     for (int i = 0; i < 10 ; ++i) {
         for (int j = 0; j <10 ; ++j) {
 
