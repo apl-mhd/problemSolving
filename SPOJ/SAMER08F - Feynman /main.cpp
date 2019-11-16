@@ -50,7 +50,7 @@ int main() {
 
         else
             cout<<sumSquare(n)<<endl;
-        
+
     }
 
     return 0;
