@@ -8,12 +8,8 @@
 #include <set>
 #include <map>
 #include <utility>
-
 #define  MAX 100010
-
-
 using namespace std;
-
 
 int  yn(){
 
@@ -21,54 +17,37 @@ int  yn(){
     cin>>n;
 
     int count =0;
-
-    map<int, int> m;
-
     int a[MAX] ={0};
     int b[MAX] ={0};
     int c[MAX] ={0};
 
     for (int k = 0; k <n ; ++k) {
-
         cin>>a[k];
-
     }
+
     c[0]=0;
     c[n]=0;
-    for (int k = 0; k <n ; ++k) {
 
+    for (int k = 0; k <n ; ++k) {
         cin>>b[k];
         c[k+1] = b[k]-a[k];
-        //cout<<c[k+1]<<" ";
     }
 
-
     for (int j = 0; j <=n; ++j) {
-
 
         if (c[j] < 0)
             return false;
 
-
         if (c[j] != c[j + 1]) {
-
             count++;
-
         }
     }
 
         return (count <= 2);
-
-
 }
 
 int main() {
-
-
-
-
     int t;
-
     cin>>t;
 
     while(t){
@@ -81,11 +60,7 @@ int main() {
 
             cout<<"NO"<<endl;
         }
-
-
     }
-
-
 
     return 0;
 }
