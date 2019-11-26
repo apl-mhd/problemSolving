@@ -5,15 +5,21 @@
 #define MX INT_MAX
 #define MIN INT_MIN
 
+
+
+
 using namespace std;
+
+int dp[110][110];
+int arr[110][110];
 
 
 
 int solve(int n, int m){
 
 
-    int dp[110][110]={0};
-    int arr[110][110]={0};
+    memset(dp, 0, sizeof(dp));
+    memset(dp, 0, sizeof(arr));
 
 
     for (int i = 0; i <n; ++i) {
@@ -59,18 +65,10 @@ int main() {
 
 
     int t;
+    int n,m;
+    cin>>n>>m;
 
-    cin>>t;
-
-    while(t){
-
-        int n,m;
-        cin>>n>>m;
-
-        cout<<solve(n, m)<<endl;
-        t--;
-
-    }
+    cout<<solve(n, m)<<endl;
 
 
 
