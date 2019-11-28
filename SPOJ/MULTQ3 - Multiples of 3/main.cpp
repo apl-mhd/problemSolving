@@ -4,65 +4,103 @@
 #define  maxSize  100010
 using namespace std;
 int arr[maxSize] = {0};
-int tree[maxSize * 3] = {0};
+
+
+
+struct  info{
+
+    int sum = 0;
+    int divSum = 0;
+    int  prop = 0;
+
+
+
+}tree[maxSize * 3];
+
+
 
 void init(int node, int b, int e){
 
     if(b == e){
-        arr[b] = 0;
-        tree[node]  +=1;
+
+        tree[node].sum = 0;
+        tree[node].divSum = 1;
+        tree[node].prop = 0;
         return;
     }
 
-    int left = node * 2 + 1;
-    int right = node * 2 + 2;
-    int mid = ( b + e ) / 2;
+    int l = node * 2 + 1;
+    int r = node * 2 + 2;
+    int m = ( b + e ) / 2;
 
-    init(left, b, mid);
-    init(right, mid+1, e);
-    tree[node] = tree[left] + tree[right];
+    init(l, b, m);
+    init(r, m+1, e);
 
+    tree[node].divSum = tree[l].divSum + tree[r].divSum;
 
 }
 
-void  update(int node, int b, int e, int i){
+
+void  update(int node, int b, int e, int i, int j, int carry=0){
 
 
-        if(b == e && b == i){
-            arr[i] += 1;
-            tree[node] = ((arr[i] %3 == 0)? 1 : 0);
+        if( j<b || i > e ){
+
             return;
         }
 
+        if(b>=i && e<=j){
 
-        if(i< b || i > e)
+               tree[node].sum +=1;
+
+               //int a = (tree[node].sum + carry) % 3;
+
+               //tree[node].divSum = ((tree[node].sum % 3 == 0)? (e-b + 1): 0);
+            //tree[node].divSum =  (a == 0)? (e-b+1) : 0;
+
             return;
+        }
+
+        int l = node * 2 + 1;
+        int r = node * 2 + 2;
+        int m = ( b + e ) / 2;
+        update(l, b, m, i, j, carry+tree[node].sum);
+        update(r, m+1, e, i, j, carry+tree[node].sum);
+
+        int lsum = (tree[l].sum + carry) %3;
+        int rsum = tree[r].sum + carry;
+
+        //tree[node].divSum = (lsum % 3) + tree[r].divSum ;
+
+        //tree[node].divSum = tree[l].divSum + tree[r].divSum ;
 
 
-        int left = node * 2 + 1;
-        int right = node * 2 + 2;
-
-        int mid = (b + e) /2;
-        update(left, b, mid, i);
-        update(right, mid+1, e, i);
-        tree[node] =   tree[left] + tree[right];
-
-        
 }
 
-int query(int node, int b, int e, int i, int j){
+
+
+
+int query(int node, int b, int e, int i, int j, int carry = 0){
 
         if(j< b || i > e)
             return  0;
 
-        if(b >= i && e<=j)
-            return tree[node];
+        if(b >= i && e<=j){
+
+            if(b == e)
+                return ((carry % 3 == 0 ) ? 1:0 );
+
+            else
+                //return ((tree[node].sum + carry) % 3 == 0 )? (e - b + 1): 0;
+                return ((tree[b].sum + carry) % 3 == 0 )? (e - b + 1): 0;
+        }
 
 
-        int left = node * 2 + 1;
-        int right = node * 2 + 2;
-        int mid = (b + e) / 2;
-        return query(left, b, mid, i, j) + query(right, mid+1, e, i, j) ;
+
+        int l = node * 2 + 1;
+        int r = node * 2 + 2;
+        int m = (b + e) / 2;
+        return query(l, b, m, i, j, carry + tree[node].sum) + query(r, m+1, e, i, j, carry + tree[node].sum) ;
 
 }
 
@@ -71,62 +109,68 @@ int main() {
 
 
 
+    init(0, 0, 3);
+    update(0, 0, 3, 0, 3);
+    update(0, 0, 3, 0, 3);
+    update(0, 0, 3, 0, 3);
+    update(0, 0, 3, 0, 0);
 
+
+
+    cout<<tree[0].sum<<endl<<endl;
+
+
+     //update(0, 0, 3, 1, 1);
+     //update(0, 0, 3, 1, 1);
+     //
+    cout<<query(0, 0, 3, 1, 1)<<endl;
+    cout<<query(0, 0, 3, 0, 1)<<endl;
+    cout<<query(0, 0, 3, 0, 0)<<endl;
+    cout<<query(0, 0, 3, 1, 3)<<endl;
+    cout<<query(0, 0, 3, 2, 3)<<endl;
+    cout<<query(0, 0, 3, 2, 2)<<endl;
+    cout<<query(0, 0, 3, 0, 3)<<endl;
+
+
+
+
+     /*cout<<tree[3].sum<<endl;
+     cout<<tree[4].sum<<endl;
+     cout<<tree[5].sum<<endl;
+     cout<<tree[6].sum<<endl;*/
+
+
+    /* for (int i = 0; i <7; ++i) {
+         //cout<<tree[i].divSum<<endl;
+     }
+
+*/
     int n, q;
 
-    scanf("%d%d", &n,&q);
-    cin>>n>>q;
-
+    scanf("%d%d",&n, &q);
     init(0, 0, n-1);
 
 
-    for (int k = 0; k <q; ++k) {
+    for (int i = 0; i < q ; ++i) {
 
-        int aq, i, j;
-        cin>>aq>>i>>j;
-        if(aq == 1)
-            cout<<query(0, 0, n-1, i, j)<<endl;
-        else{
+        int a,b,c;
 
-            for (int l = i; l <=j; ++l) {
-                update(0, 0, n-1, l);
-            }
-        }
+        scanf("%d%d%d",&a, &b, &c);
+        if(a==1)
 
+            printf("%d\n",query(0, 0, n-1, b, c));
 
+        else
+
+            update(0, 0, n-1, b,c);
     }
 
 
 
-    /*update(0, 0, 3, 0);
-    update(0, 0, 3, 0);
-    update(0, 0, 3, 1);
-    update(0, 0, 3, 1);
-    update(0, 0, 3, 2);
-    update(0, 0, 3, 2);
-    update(0, 0, 3, 3);
-    update(0, 0, 3, 3);*/
 
 
 
 
-    /*init(0, 0, 3);
-
-    cout<<query(0,0,3, 0, 3)<<endl;
-
-    update(0,0,3,4);
-    cout<<query(0,0,3, 0, 0)<<endl;
-    cout<<query(0,0,3, 0, 1)<<endl;
-    cout<<query(0,0,3, 0, 2)<<endl;
-    cout<<query(0,0,3, 1, 3)<<endl;
-
-
-
-    for (int i = 0; i < 7; ++i) {
-
-        //cout<<tree[i]<<" ";
-    }
-*/
 
 
 
