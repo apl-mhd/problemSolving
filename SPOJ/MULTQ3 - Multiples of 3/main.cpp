@@ -10,9 +10,6 @@ int arr[maxSize] = {0};
 struct  info{
 
     int sum = 0;
-    int divSum = 0;
-    int  prop = 0;
-
 
 
 }tree[maxSize * 3];
@@ -22,10 +19,7 @@ struct  info{
 void init(int node, int b, int e){
 
     if(b == e){
-
         tree[node].sum = 0;
-        tree[node].divSum = 1;
-        tree[node].prop = 0;
         return;
     }
 
@@ -36,7 +30,7 @@ void init(int node, int b, int e){
     init(l, b, m);
     init(r, m+1, e);
 
-    tree[node].divSum = tree[l].divSum + tree[r].divSum;
+    tree[node].sum = 0;
 
 }
 
@@ -51,15 +45,10 @@ void  update(int node, int b, int e, int i, int j, int carry=0){
 
         if(b>=i && e<=j){
 
-               tree[node].sum +=1;
-
-               //int a = (tree[node].sum + carry) % 3;
-
-               //tree[node].divSum = ((tree[node].sum % 3 == 0)? (e-b + 1): 0);
-            //tree[node].divSum =  (a == 0)? (e-b+1) : 0;
-
+            tree[node].sum +=1;
             return;
         }
+
 
         int l = node * 2 + 1;
         int r = node * 2 + 2;
@@ -67,12 +56,7 @@ void  update(int node, int b, int e, int i, int j, int carry=0){
         update(l, b, m, i, j, carry+tree[node].sum);
         update(r, m+1, e, i, j, carry+tree[node].sum);
 
-        int lsum = (tree[l].sum + carry) %3;
-        int rsum = tree[r].sum + carry;
 
-        //tree[node].divSum = (lsum % 3) + tree[r].divSum ;
-
-        //tree[node].divSum = tree[l].divSum + tree[r].divSum ;
 
 
 }
@@ -87,12 +71,9 @@ int query(int node, int b, int e, int i, int j, int carry = 0){
 
         if(b >= i && e<=j){
 
-            if(b == e)
-                return ((carry % 3 == 0 ) ? 1:0 );
 
-            else
-                //return ((tree[node].sum + carry) % 3 == 0 )? (e - b + 1): 0;
-                return ((tree[b].sum + carry) % 3 == 0 )? (e - b + 1): 0;
+
+            return 0;
         }
 
 
@@ -100,7 +81,10 @@ int query(int node, int b, int e, int i, int j, int carry = 0){
         int l = node * 2 + 1;
         int r = node * 2 + 2;
         int m = (b + e) / 2;
-        return query(l, b, m, i, j, carry + tree[node].sum) + query(r, m+1, e, i, j, carry + tree[node].sum) ;
+
+
+
+         return  query(l, m, i, j, carry + tree[node].sum) ;
 
 }
 
@@ -108,15 +92,22 @@ int query(int node, int b, int e, int i, int j, int carry = 0){
 int main() {
 
 
-
+/*
     init(0, 0, 3);
     update(0, 0, 3, 0, 3);
-    update(0, 0, 3, 0, 3);
-    update(0, 0, 3, 0, 3);
-    update(0, 0, 3, 0, 0);
+    update(0, 0, 3, 0, 1);
+    update(0, 0, 3, 2, 2);
+    update(0, 0, 3, 2, 2);*/
 
 
 
+    for (int i = 0; i <7 ; ++i) {
+
+        cout<<i<<" "<< tree[i].sum<<"\n";
+    }
+
+
+/*
     cout<<tree[0].sum<<endl<<endl;
 
 
@@ -129,23 +120,13 @@ int main() {
     cout<<query(0, 0, 3, 1, 3)<<endl;
     cout<<query(0, 0, 3, 2, 3)<<endl;
     cout<<query(0, 0, 3, 2, 2)<<endl;
-    cout<<query(0, 0, 3, 0, 3)<<endl;
+    cout<<query(0, 0, 3, 0, 3)<<endl;*/
 
 
 
 
-     /*cout<<tree[3].sum<<endl;
-     cout<<tree[4].sum<<endl;
-     cout<<tree[5].sum<<endl;
-     cout<<tree[6].sum<<endl;*/
 
-
-    /* for (int i = 0; i <7; ++i) {
-         //cout<<tree[i].divSum<<endl;
-     }
-
-*/
-    int n, q;
+   /* int n, q;
 
     scanf("%d%d",&n, &q);
     init(0, 0, n-1);
@@ -163,7 +144,7 @@ int main() {
         else
 
             update(0, 0, n-1, b,c);
-    }
+    }*/
 
 
 
