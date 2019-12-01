@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int arr[]={1,2,3,4,5,6,6,7,8};
+int arr[]={1,2,3,3,3,3,3,8,9};
 int bst(int l, int r, int v){
 
 
@@ -13,11 +13,8 @@ int bst(int l, int r, int v){
 
             if(arr[m] == v)
                 return m;
-
-
             if(arr[m]< v)
                 return bst(m+1, r, v);
-
 
             return  bst(l, m-1, v);
         }
@@ -27,8 +24,6 @@ int bst(int l, int r, int v){
 }
 
 int main() {
-
-
 
 
     for (int i = 0; i <20 ; ++i) {
