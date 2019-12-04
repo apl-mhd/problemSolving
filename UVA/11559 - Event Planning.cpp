@@ -12,7 +12,7 @@ int main() {
 
 
 
-    int participate, budget, hotel, week, hotelBudget, budgetSm, available;
+    int participate, budget, hotel, week, hotelBudget, budgetSm, available, bed;
 
     while(scanf("%d %d %d %d", &participate, &budget, &hotel, &week) == 4) {
 
@@ -24,17 +24,22 @@ int main() {
 
             int hotelArr[13];
 
+            available =0;
+
             cin >> hotelBudget;
 
             for (int j = 0; j < week; ++j) {
 
-                cin >> hotelArr[j];
+               // cin >> hotelArr[j];
+               cin>>bed;
+
+               available = max(bed, available);
 
             }
 
-            sort(hotelArr, hotelArr + week, greater<int>());
+           // sort(hotelArr, hotelArr + week, greater<int>());
 
-            if (hotelArr[0] >= participate) {
+            if (available >= participate) {
 
                 int temp = participate * hotelBudget;
 
