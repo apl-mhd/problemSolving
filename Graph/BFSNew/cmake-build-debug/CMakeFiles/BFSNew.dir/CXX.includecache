@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sheikhaliazzam/Desktop/Algo/Graph/BFSNew/main.cpp
+iostream
+-
+cstdio
+-
+stack
+-
+queue
+-
+vector
+-
+climits
+-
+algorithm
+-
+

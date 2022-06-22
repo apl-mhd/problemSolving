@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sheikhaliazzam/Desktop/Algo/Graph/dijkstraZituSir/main.cpp
+iostream
+-
+cstdio
+-
+stack
+-
+queue
+-
+algorithm
+-
+vector
+-
+climits
+-
+

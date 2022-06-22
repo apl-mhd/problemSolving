@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sheikhaliazzam/Desktop/Algo/Graph/dset/main.cpp
+iostream
+-
+cstdio
+-
+vector
+-
+fstream
+-
+map
+-
+

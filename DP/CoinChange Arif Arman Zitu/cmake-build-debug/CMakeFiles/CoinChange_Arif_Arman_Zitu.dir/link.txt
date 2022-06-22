@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/CoinChange_Arif_Arman_Zitu.dir/main.cpp.o  -o CoinChange_Arif_Arman_Zitu 

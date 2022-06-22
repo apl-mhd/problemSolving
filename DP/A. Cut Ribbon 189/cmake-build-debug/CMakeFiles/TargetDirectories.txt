@@ -1,0 +1,3 @@
+/Users/sheikhaliazzam/Desktop/OJ/A. Cut Ribbon 189/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sheikhaliazzam/Desktop/OJ/A. Cut Ribbon 189/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sheikhaliazzam/Desktop/OJ/A. Cut Ribbon 189/cmake-build-debug/CMakeFiles/A__Cut_Ribbon_189.dir

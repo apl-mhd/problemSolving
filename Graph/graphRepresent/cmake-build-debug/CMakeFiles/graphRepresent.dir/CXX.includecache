@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sheikhaliazzam/Desktop/Algo/Graph/graphRepresent/main.cpp
+cstdio
+-
+iostream
+-
+vector
+-
+
