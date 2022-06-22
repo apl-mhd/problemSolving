@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main() {
+
+
+    long long int n;
+    cin>>n;
+
+
+    if( n <=9)
+    {
+        cout<<1<<endl;
+        cout<<1<<endl;
+    }
+
+   else if(n%10==0){
+        cout<<2<<endl;
+
+    }
+
+    else
+
+    {
+
+        cout<<1<<endl;
+        cout<<(n%10)<<endl;
+
+    }
+
+
+    return 0;
+}
