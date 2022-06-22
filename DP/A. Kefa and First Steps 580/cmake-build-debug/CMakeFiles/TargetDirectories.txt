@@ -1,0 +1,3 @@
+/Users/sheikhaliazzam/Desktop/OJ/A. Kefa and First Steps 580/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sheikhaliazzam/Desktop/OJ/A. Kefa and First Steps 580/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sheikhaliazzam/Desktop/OJ/A. Kefa and First Steps 580/cmake-build-debug/CMakeFiles/A__Kefa_and_First_Steps_580.dir

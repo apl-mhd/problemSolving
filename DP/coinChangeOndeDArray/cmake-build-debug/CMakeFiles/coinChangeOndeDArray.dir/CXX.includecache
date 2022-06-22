@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sheikhaliazzam/Desktop/Algo/DP/coinChangeOndeDArray/main.cpp
+iostream
+-
+cstdio
+-
+climits
+-
+algorithm
+-
+vector
+-
+stack
+-
+queue
+-
+cmath
+-
+

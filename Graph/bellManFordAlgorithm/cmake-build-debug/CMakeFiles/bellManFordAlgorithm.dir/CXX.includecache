@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sheikhaliazzam/Desktop/Algo/Graph/bellManFordAlgorithm/main.cpp
+iostream
+-
+cstdio
+-
+stack
+-
+queue
+-
+algorithm
+-
+vector
+-
+climits
+-
+utility
+-
+

@@ -1,0 +1,3 @@
+/Users/sheikhaliazzam/Desktop/Algo/DP/knapsack for exam/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sheikhaliazzam/Desktop/Algo/DP/knapsack for exam/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sheikhaliazzam/Desktop/Algo/DP/knapsack for exam/cmake-build-debug/CMakeFiles/knapsack_for_exam.dir
